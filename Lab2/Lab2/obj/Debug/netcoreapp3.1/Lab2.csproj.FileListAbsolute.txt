@@ -1,0 +1,13 @@
+C:\Users\murad\LEARNING\MSU\3_course\C#\Lab2\Lab2\Lab2\bin\Debug\netcoreapp3.1\Lab2.exe
+C:\Users\murad\LEARNING\MSU\3_course\C#\Lab2\Lab2\Lab2\bin\Debug\netcoreapp3.1\Lab2.deps.json
+C:\Users\murad\LEARNING\MSU\3_course\C#\Lab2\Lab2\Lab2\bin\Debug\netcoreapp3.1\Lab2.runtimeconfig.json
+C:\Users\murad\LEARNING\MSU\3_course\C#\Lab2\Lab2\Lab2\bin\Debug\netcoreapp3.1\Lab2.runtimeconfig.dev.json
+C:\Users\murad\LEARNING\MSU\3_course\C#\Lab2\Lab2\Lab2\bin\Debug\netcoreapp3.1\Lab2.dll
+C:\Users\murad\LEARNING\MSU\3_course\C#\Lab2\Lab2\Lab2\bin\Debug\netcoreapp3.1\Lab2.pdb
+C:\Users\murad\LEARNING\MSU\3_course\C#\Lab2\Lab2\Lab2\obj\Debug\netcoreapp3.1\Lab2.csprojAssemblyReference.cache
+C:\Users\murad\LEARNING\MSU\3_course\C#\Lab2\Lab2\Lab2\obj\Debug\netcoreapp3.1\Lab2.AssemblyInfoInputs.cache
+C:\Users\murad\LEARNING\MSU\3_course\C#\Lab2\Lab2\Lab2\obj\Debug\netcoreapp3.1\Lab2.AssemblyInfo.cs
+C:\Users\murad\LEARNING\MSU\3_course\C#\Lab2\Lab2\Lab2\obj\Debug\netcoreapp3.1\Lab2.csproj.CoreCompileInputs.cache
+C:\Users\murad\LEARNING\MSU\3_course\C#\Lab2\Lab2\Lab2\obj\Debug\netcoreapp3.1\Lab2.dll
+C:\Users\murad\LEARNING\MSU\3_course\C#\Lab2\Lab2\Lab2\obj\Debug\netcoreapp3.1\Lab2.pdb
+C:\Users\murad\LEARNING\MSU\3_course\C#\Lab2\Lab2\Lab2\obj\Debug\netcoreapp3.1\Lab2.genruntimeconfig.cache
