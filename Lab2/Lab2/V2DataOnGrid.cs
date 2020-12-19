@@ -12,7 +12,6 @@ namespace Lab2
     {
         public Grid1D[] Grids { get; set; }
         public Complex[,] Values { get; set; }
-
         public V2DataOnGrid(string info, double freq, Grid1D grid1, Grid1D grid2)
             : base(info, freq)
         {
@@ -20,7 +19,6 @@ namespace Lab2
             Grids[0] = grid1;
             Grids[1] = grid2;
         }
-
         public V2DataOnGrid(string filename)
         {
             try
@@ -28,9 +26,10 @@ namespace Lab2
                 using (StreamReader sr = new StreamReader(filename))
                 {
                     string[] str = sr.ReadLine().Split(" ".ToCharArray(), System.StringSplitOptions.RemoveEmptyEntries);
-                    Grid1D grid1 = new Grid1D(float.Parse(str[0]), int.Parse(str[1]));
+                    CultureInfo cultureInfo = new CultureInfo(CultureInfo.CurrentCulture.ToString());
+                    Grid1D grid1 = new Grid1D(float.Parse(str[0], cultureInfo), int.Parse(str[1]));
                     str = sr.ReadLine().Split(" ".ToCharArray(), System.StringSplitOptions.RemoveEmptyEntries);
-                    Grid1D grid2 = new Grid1D(float.Parse(str[0]), int.Parse(str[1]));
+                    Grid1D grid2 = new Grid1D(float.Parse(str[0], cultureInfo), int.Parse(str[1]));
                     Grids = new Grid1D[2];
                     Grids[0] = grid1;
                     Grids[1] = grid2;
@@ -40,19 +39,24 @@ namespace Lab2
                         for (int j = 0; j < Grids[1].Num; ++j)
                         {
                             str = sr.ReadLine().Split(" ".ToCharArray(), System.StringSplitOptions.RemoveEmptyEntries);
-                            Values[i, j] = new Complex(double.Parse(str[0]), double.Parse(str[1]));
+                            Values[i, j] = new Complex(double.Parse(str[0], cultureInfo), double.Parse(str[1], cultureInfo));
                         }
                     }
-                    Frequency = double.Parse(sr.ReadLine().Split(" ".ToCharArray(), System.StringSplitOptions.RemoveEmptyEntries)[0]);
+                    Frequency = double.Parse(sr.ReadLine().Split(" ".ToCharArray(), System.StringSplitOptions.RemoveEmptyEntries)[0], cultureInfo);
                     Info = sr.ReadToEnd();
                 }
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Исключение: {ex.Message}");
+                Grids = new Grid1D[2];
+                Grids[0] = new Grid1D(0, 0);
+                Grids[1] = new Grid1D(0, 0);
+                Values = new Complex[0, 0];
+                Frequency = 0;
+                Info = "Error";
             }
         }
-
         public void InitRandom(double minValue, double maxValue)
         {
             Values = new Complex[Grids[0].Num, Grids[1].Num];
@@ -82,7 +86,6 @@ namespace Lab2
             }
             return dataCollection;
         }
-
         public override Complex[] NearAverage(float eps)
         {
             List<Complex> ans = new List<Complex>();
@@ -102,7 +105,6 @@ namespace Lab2
             }
             return ans.ToArray();
         }
-
         public override string ToString()
         {
             return "V2DataOnGrid: " + Info + ", frequency: " + Frequency.ToString()
@@ -126,24 +128,20 @@ namespace Lab2
         public override IEnumerator<DataItem> GetEnumerator()
         {
             int num = Values.Length;
-            List<DataItem> data = new List<DataItem>();
             for (int i = 0; i < Grids[0].Num; ++i)
             {
                 for (int j = 0; j < Grids[1].Num; ++j)
                 {
                     Vector2 vector = new Vector2(i * Grids[0].Step, j * Grids[1].Step);
                     DataItem tmp = new DataItem(vector, Values[i, j]);
-                    data.Add(tmp);
+                    yield return tmp;
                 }
             }
-            return data.GetEnumerator();
         }
-
         IEnumerator IEnumerable.GetEnumerator()
         {
             throw new NotImplementedException();
         }
-
         public override string ToLongString(string format)
         {
             String str = "V2DataOnGrid: " + Info + ", frequency: " + Frequency.ToString(format)

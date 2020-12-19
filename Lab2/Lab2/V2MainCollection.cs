@@ -43,11 +43,23 @@ namespace Lab2
         {
             get
             {
-                return from list in data
-                       where list is V2DataCollection
-                       from value in list as V2DataCollection
-                       select value.Coords;
-
+                try
+                {
+                    V2DataCollection first = (V2DataCollection)(from list in data
+                                                                where list is V2DataCollection
+                                                                select list).First();
+                    var collections = from list in data
+                                      where list is V2DataCollection
+                                      select list;
+                    return from vector in first
+                           where collections.All(list => (from item in list
+                                                   select item.Coords).Contains(vector.Coords))
+                           select vector.Coords;
+                }
+                catch(System.InvalidOperationException)
+                {
+                    return null;
+                }
             }
         }
         public List<V2Data> Data

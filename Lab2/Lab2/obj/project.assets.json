@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\murad\\LEARNING\\MSU\\3_course\\C#\\Lab2\\Lab2\\Lab2\\Lab2.csproj",
+      "projectUniqueName": "D:\\Learning\\MyPrograms\\MSU\\3rd\\C#\\Lab2\\Lab2\\Lab2.csproj",
       "projectName": "Lab2",
-      "projectPath": "C:\\Users\\murad\\LEARNING\\MSU\\3_course\\C#\\Lab2\\Lab2\\Lab2\\Lab2.csproj",
+      "projectPath": "D:\\Learning\\MyPrograms\\MSU\\3rd\\C#\\Lab2\\Lab2\\Lab2.csproj",
       "packagesPath": "C:\\Users\\murad\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\murad\\LEARNING\\MSU\\3_course\\C#\\Lab2\\Lab2\\Lab2\\obj\\",
+      "outputPath": "D:\\Learning\\MyPrograms\\MSU\\3rd\\C#\\Lab2\\Lab2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\murad\\AppData\\Roaming\\NuGet\\NuGet.Config",

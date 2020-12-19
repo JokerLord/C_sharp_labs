@@ -9,15 +9,18 @@ namespace Lab2
         {
             V2DataOnGrid dataOnGrid = new V2DataOnGrid("input.txt");
             Console.WriteLine(dataOnGrid.ToLongString("F4"));
-            V2MainCollection colletion1 = new V2MainCollection();
-            colletion1.AddDefaults();
-            Console.WriteLine(colletion1.ToLongString("F4"));
-            Console.WriteLine("Average magnitude: " + colletion1.AverageMagnitude.ToString("F4") + "\n");
-            Console.WriteLine("DataItem with magnitude nearest to the average: " + colletion1.Nearest.ToString("F4") + "\n");
-            Console.WriteLine("All coordinates:\n");
-            foreach (Vector2 value in colletion1.Common)
+            V2MainCollection collection1 = new V2MainCollection();
+            collection1.AddDefaults();
+            Console.WriteLine(collection1.ToLongString("F4"));
+            Console.WriteLine("Average magnitude: " + collection1.AverageMagnitude.ToString("F4") + "\n");
+            Console.WriteLine("DataItem with magnitude nearest to the average: " + collection1.Nearest.ToString("F4") + "\n");
+            Console.WriteLine("Common coordinates:");
+            if (collection1.Common != null)
             {
-                Console.WriteLine(value.ToString("F4"));
+                foreach (Vector2 value in collection1.Common)
+                {
+                    Console.WriteLine(value.ToString("F4"));
+                }
             }
         }
     }
